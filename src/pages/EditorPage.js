@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Client from '../components/Client';
+import Editor from '../components/Editor'
 
 const EditorPage = () => {
 
@@ -7,7 +8,7 @@ const EditorPage = () => {
         { socketId: 1, username: 'Viraj' },
         { socketId: 2, username: 'Ram' },
         { socketId: 3, username: 'Shyam' },
-        { socketId: 4, username: 'Ghanshyam' },
+        { socketId: 4, username: 'Tony' },
         { socketId: 5, username: 'Krish' },
     ]);
 
@@ -43,7 +44,7 @@ const EditorPage = () => {
             </div>
 
             <div className="editorWrap">
-                Editor goes here
+                <Editor />
             </div>
         </div>
     );
