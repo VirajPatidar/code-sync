@@ -33,7 +33,7 @@ const EditorPage = () => {
             socketRef.current.on('connect_failed', (err) => handleErrors(err));
 
             function handleErrors(e) {
-                console.log('socket error', e);
+                // console.log('socket error', e);
                 toast.error('Socket connection failed, try again later.');
                 reactNavigator('/');
             }
@@ -49,7 +49,7 @@ const EditorPage = () => {
                 ({ clients, username, socketId }) => {
                     if (username !== location.state?.username) {
                         toast.success(`${username} joined the room.`);
-                        console.log(`${username} joined`);
+                        // console.log(`${username} joined`);
                     }
                     setClients(clients);
                     socketRef.current.emit(ACTIONS.SYNC_CODE, {
