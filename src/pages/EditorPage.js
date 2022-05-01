@@ -17,13 +17,7 @@ const EditorPage = () => {
 
     const [lang, setLang] = useRecoilState(language);
 
-    const [clients, setClients] = useState([
-        { socketId: 1, username: 'Viraj' },
-        { socketId: 2, username: 'Ram' },
-        { socketId: 3, username: 'Shyam' },
-        { socketId: 4, username: 'Tony' },
-        { socketId: 5, username: 'Krish' },
-    ]);
+    const [clients, setClients] = useState([]);
 
 
     const socketRef = useRef(null);
@@ -80,9 +74,9 @@ const EditorPage = () => {
         };
         init();
         return () => {
-            socketRef.current.disconnect();
             socketRef.current.off(ACTIONS.JOINED);
             socketRef.current.off(ACTIONS.DISCONNECTED);
+            socketRef.current.disconnect();
         };
     }, []);
 
