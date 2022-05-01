@@ -78,6 +78,7 @@ const EditorPage = () => {
             socketRef.current.off(ACTIONS.DISCONNECTED);
             socketRef.current.disconnect();
         };
+        // eslint-disable-next-line
     }, []);
 
 
