@@ -1,7 +1,6 @@
 # Code Sync
 
-_Code Sync web app is a code editor that allows its users to collaborate and write code together using its basic editing features.<br/>
-The changes are synced in realtime and the editor supports 21 languages and 63 themes._
+_Code Sync web app is a code editor that allows its users to collaborate and write code together. It provides basic editing features and the changes are synced in realtime. The editor supports syntax of 21 programming languages and offers 63 design themes._
 
 <br/>
 
@@ -28,7 +27,7 @@ The changes are synced in realtime and the editor supports 21 languages and 63 t
 ### Features ###
 * **Responsive Design**
 * **Realtime Collobarative Code Editor**
-* **Supports 21 languages**
+* **Supports syntax of 21 programming languages**
 * **Supports 63 design themes**
 
 
