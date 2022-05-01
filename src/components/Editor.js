@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { language } from '../../src/atoms';
 import { useRecoilValue } from 'recoil';
+import ACTIONS from '../Actions';
 
 // CODE MIRROR
 import Codemirror from 'codemirror';
@@ -44,13 +45,14 @@ import 'codemirror/lib/codemirror.css';
     import 'codemirror/addon/dialog/dialog.js';
     import 'codemirror/addon/dialog/dialog.css';
 
-const Editor = () => {
+const Editor = ({ socketRef, roomId, onCodeChange }) => {
 
+    const editorRef = useRef(null);
     const lang = useRecoilValue(language);
 
     useEffect(() => {
         async function init() {
-            Codemirror.fromTextArea(
+            editorRef.current = Codemirror.fromTextArea(
                 document.getElementById('realtimeEditor'),
                 {
                     mode: { name: lang },
@@ -60,9 +62,40 @@ const Editor = () => {
                     lineNumbers: true,
                 }
             );
+
+            editorRef.current.on('change', (instance, changes) => {
+                const { origin } = changes;
+                const code = instance.getValue();
+                onCodeChange(code);
+                if (origin !== 'setValue') {
+                    socketRef.current.emit(ACTIONS.CODE_CHANGE, {
+                        roomId,
+                        code,
+                    });
+                }
+            });
+
         }
         init();
     }, [lang]);
+
+
+
+    useEffect(() => {
+        if (socketRef.current) {
+            socketRef.current.on(ACTIONS.CODE_CHANGE, ({ code }) => {
+                if (code !== null) {
+                    editorRef.current.setValue(code);
+                }
+            });
+        }
+
+        return () => {
+            socketRef.current.off(ACTIONS.CODE_CHANGE);
+        };
+    }, [socketRef.current]);
+
+
 
     return (
             <textarea id="realtimeEditor"></textarea>
