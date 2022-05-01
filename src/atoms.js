@@ -22,3 +22,11 @@ export const language = atom({
         localStorageEffect('language'),
     ]
 });
+
+export const cmtheme = atom({
+    key: "cmtheme",
+    default: "monokai",
+    effects_UNSTABLE: [
+        localStorageEffect('cmtheme'),
+    ]
+});
