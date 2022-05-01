@@ -1,4 +1,43 @@
-# Getting Started with Create React App
+# Code Sync
+
+_Code Sync web app is a code editor that allows its users to collaborate and write code together using its basic editing features.<br/>
+The changes are synced in realtime and the editor supports 21 languages and 63 themes._
+
+<br/>
+
+**Link to the web app:** [https://code-synced.herokuapp.com/](https://code-synced.herokuapp.com/) <br/>
+
+<br/>
+
+### Tech Stack ###
+  **Frontend**
+  * React
+  * Recoil
+  * CodeMirror
+  * react-hot-toast
+  * axios
+  * react-router
+  
+  **Backend**
+  * Node.js
+  * Express.js
+  * Socket.io
+
+<br/>
+
+### Features ###
+* **Responsive Design**
+* **Realtime Collobarative Code Editor**
+* **Supports 21 languages**
+* **Supports 63 design themes**
+
+
+<br/>
+<br/>
+
+- - - -
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
