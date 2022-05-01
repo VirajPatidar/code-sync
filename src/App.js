@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import EditorPage from './pages/EditorPage';
 import { RecoilRoot } from "recoil";
+import GithubCorner from 'react-github-corner';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
                     </Routes>
                 </RecoilRoot>
             </BrowserRouter>
+            <GithubCorner href="https://github.com/VirajPatidar/code-sync" target="_blank" rel="noopener noreferrer" />
         </>
     );
 }
