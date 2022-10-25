@@ -4,7 +4,7 @@ _Code Sync web app is a code editor that allows its users to collaborate and wri
 
 <br/>
 
-**Link to the web app:** [https://code-synced.herokuapp.com/](https://code-synced.herokuapp.com/) <br/>
+**Link to the web app:** [https://code-sync-qq8w.onrender.com/](https://code-sync-qq8w.onrender.com/) <br/>
 
 <br/>
 
